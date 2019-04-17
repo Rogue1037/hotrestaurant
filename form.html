@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://code.jquery.com/jquery.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-grid.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Hot Restaurant</title>
+  </head>
+  <body>
+      <div class="container">
+        <div class="jumbotron">
+           <div class="container text-center">
+                <h1 class="display-4" ><span class="glyphicon glyphicon-fire"></span>Hot Restaurant</h1>
+                
+                <hr class="my-4">
+                <
+                <a class="btn btn-primary btn-lg" href="#" role="button">View Tables</a>
+                <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><span class="fa fa-home"></span></a>
+                </div>
+              </div>
+        <div class="card">
+                <div class="card-header">
+                        Table Reservation
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Put your info below</h5>
+                  <form>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Name</label>
+                          <input type="string" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="John doe">
+                          <small id="emailHelp" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Phone Number</label>
+                          <input type="number" class="form-control" id="exampleInputPassword1" placeholder="000-000-0000">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" id="add-btn">Submit</button>
+                      </form>
+                </div>
+              </div>
+    
+        </div>
+        <script type="text/javascript">
+   
+    $("#add-btn").on("click", function(event) {
+      event.preventDefault();
+
+      var newwaitlist = {
+        name: $("#emailHelp").val().trim(),
+        phoneNumber: $("#exampleInputPassword1").val().trim(),
+        
+      };
+
+      $.post("/api/form", newwaitlist)
+        .then(function(data) {
+          console.log(data);
+          alert("Adding to waitlist...");
+        });
+
+    });
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
