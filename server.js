@@ -13,65 +13,36 @@ var tables = [
     {
         routeName:"table1",
         name: "Table1",
-        phoneNumber: 0
-        
-        
+        phoneNumber: 0,
+        occupied: false
     },
     {
         routeName:"table2",
         name: "Table2",
-        phoneNumber: 0
+        phoneNumber: 0,
+        occupied: false
     },
     {
         routeName:"table3",
         name: "Table3",
-        phoneNumber: 0
-    
+        phoneNumber: 0,
+        occupied: false
     },
     {
         routeName:"table4",
         name: "Table4",
-        phoneNumber: 0
+        phoneNumber: 0,
+        occupied: false
     },
     {
         routeName:"table5",
         name: "Table5",
-        phoneNumber: 0
+        phoneNumber: 0,
+        occupied: false
     },
 
 ];
-
-var waitlist = [
-    {
-        routeName:"wai1tlist",
-        name: "Waitlist1",
-        phoneNumber: 0
-        
-        
-    },
-    {
-        routeName:"waitlist2",
-        name: "Waitlist2",
-        phoneNumber: 0
-    },
-    {
-        routeName:"waitlist3",
-        name: "Waitlist3",
-        phoneNumber: 0
-    
-    },
-    {
-        routeName:"waitlist4",
-        name: "Waitlist4",
-        phoneNumber: 0
-    },
-    {
-        routeName:"waitlist5",
-        name: "Waitlist5",
-        phoneNumber: 0
-    },
-
-];
+var waitlist = [];
 
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
@@ -92,21 +63,9 @@ app.get("api/form", function(req, res) {
 });
 
 
-// app.get("/api/form", function(req, res) {
-//     var chosen = req.params.table;
+// get the table resquest and check if table avaiable
+// if availouteName:"waitlist4",
   
-//     console.log(chosen);
-  
-//     for (var i = 0; i < table.length; i++) {
-//       if (chosen === table[0].routeName) {
-//         return res.json(table[i]);
-
-//       }
-//     }
-  
-//     return res.json(false);
-//   });
-
   app.post("/api/form", function(req, res) {
      var newwaitlist = req.body;
   
@@ -126,3 +85,5 @@ app.get("api/form", function(req, res) {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
+
+  //test
