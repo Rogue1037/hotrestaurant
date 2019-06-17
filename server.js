@@ -58,7 +58,7 @@ app.get("/form", function(req, res) {
 app.get("/api/tables", function(req, res) {
     return res.json(tables);
   });
-app.get("api/form", function(req, res) {
+app.get("api/form", function(req, ) {
     return res.json(waitlist);
 });
 
